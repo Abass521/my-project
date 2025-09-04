@@ -41,29 +41,115 @@ while ($row = $result->fetch_assoc()) {
   <title>Sales History</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .history-box {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: white;
-      padding: 2rem;
-      box-shadow: 0 0 10px #ccc;
-      border-radius: 8px;
+      body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  .history-box {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  h2 {
+    margin: 0 0 1.5rem;
+    color: #222;
+    font-weight: 600;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  thead {
+    background: #007bff;
+    color: #fff;
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  tr:nth-child(even) {
+    background: #f9fbfd;
+  }
+
+  tr:hover {
+    background: #f1f6ff;
+  }
+
+  td {
+    font-size: 0.95rem;
+  }
+
+  .no-sales {
+    padding: 1rem;
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 6px;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  /* Responsive Table */
+  @media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
+    thead {
+      display: none;
     }
 
-    th, td {
-      border: 1px solid #ddd;
+    tr {
+      margin-bottom: 1rem;
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 6px;
       padding: 10px;
     }
 
-    th {
-      background: #f9f9f9;
+    td {
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 10px;
+      font-size: 0.9rem;
     }
+
+    td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #444;
+    }
+  }
+
   </style>
 </head>
 <body>

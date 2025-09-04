@@ -31,51 +31,135 @@ while ($row = $res->fetch_assoc()) {
   <title>Manage Users</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .user-box {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #ccc;
-    }
+      body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
+  .user-box {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
 
-    th, td {
-      padding: 10px;
-      border: 1px solid #ddd;
-    }
+  h2, h3 {
+    margin: 0 0 1rem;
+    color: #222;
+    font-weight: 600;
+  }
 
-    .form-inline {
-      display: flex;
-      gap: 10px;
-      margin-top: 2rem;
-    }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+  }
 
-    .form-inline input, .form-inline select {
-      padding: 10px;
-    }
+  thead {
+    background: #007bff;
+    color: #fff;
+    text-align: left;
+  }
 
-    button {
-      padding: 10px 20px;
-    }
+  th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e6e6e6;
+  }
 
-    a.button {
-      padding: 5px 10px;
-      background: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 4px;
-    }
+  tr:nth-child(even) {
+    background: #f9fbfd;
+  }
 
-    .danger {
-      background: crimson;
-    }
+  tr:hover {
+    background: #f1f6ff;
+  }
+
+  .form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 2rem;
+  }
+
+  .form-inline input,
+  .form-inline select {
+    flex: 1;
+    min-width: 150px;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.2s;
+  }
+
+  .form-inline input:focus,
+  .form-inline select:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+
+  button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  button:hover {
+    background: #0056b3;
+  }
+
+  a.button {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #007bff;
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+
+  a.button:hover {
+    background: #0056b3;
+  }
+
+  a.button.danger {
+    background: #dc3545;
+  }
+
+  a.button.danger:hover {
+    background: #a71d2a;
+  }
+
+  hr {
+    margin: 2rem 0;
+    border: none;
+    border-top: 1px solid #e6e6e6;
+  }
+
+  a.back-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a.back-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
   </style>
 </head>
 <body>

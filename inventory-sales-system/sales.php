@@ -22,81 +22,136 @@ while ($row = $res->fetch_assoc()) {
   <title>POS - Sales</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f8f9fa;
-    }
+      body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
 
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .products, .cart {
+    flex: 1;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    min-width: 300px;
+  }
+
+  h3 {
+    margin: 0 0 1rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  /* Products grid */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+
+  .product-card {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .product-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+
+  .product-card strong {
+    font-size: 15px;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .product-card input[type="number"] {
+    margin-top: 6px;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 70px;
+  }
+
+  .product-card button {
+    margin-top: 8px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+
+  .product-card button:hover {
+    background: #0056b3;
+  }
+
+  /* Cart styles */
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #ddd;
+    padding: 8px 0;
+    font-size: 0.95rem;
+  }
+
+  .cart-summary {
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #222;
+  }
+
+  .checkout-btn {
+    background: #28a745;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    transition: background 0.2s;
+  }
+
+  .checkout-btn:hover {
+    background: #1e7e34;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
     .container {
-      display: flex;
-      gap: 20px;
-      max-width: 1200px;
-      margin: 30px auto;
+      flex-direction: column;
     }
 
     .products, .cart {
-      flex: 1;
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #ccc;
+      width: 100%;
     }
+  }
 
-    /* GRID for Products */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
-    }
-
-    .product-card {
-      border: 1px solid #ddd;
-      padding: 10px;
-      border-radius: 6px;
-      background: #fafafa;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .product-card strong {
-      font-size: 16px;
-      color: #333;
-    }
-
-    .product-card input {
-      margin-top: 5px;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px dashed #ccc;
-      padding: 8px 0;
-    }
-
-    .checkout-btn {
-      background: green;
-      color: white;
-      padding: 10px 20px;
-      margin-top: 1rem;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    h3 {
-      margin-top: 0;
-    }
-
-    .cart-summary {
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-
-    input[type="number"] {
-      width: 60px;
-    }
   </style>
 </head>
 <body>

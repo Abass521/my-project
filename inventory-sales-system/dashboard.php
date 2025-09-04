@@ -51,42 +51,91 @@ if ($user['role'] === 'Admin') {
   <script defer src="js/nav.js"></script>
   <script defer src="js/sidebar.js"></script>
   <style>
-    .dashboard {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 2rem;
-      background: white;
-      box-shadow: 0 0 10px #aaa;
-      border-radius: 10px;
-    }
+      body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
 
-    .stats {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+  .dashboard {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 2.5rem;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border-radius: 12px;
+  }
 
-    .stat-box {
-      flex: 1;
-      min-width: 180px;
-      background: #f9f9f9;
-      padding: 20px;
-      border-left: 5px solid #007bff;
-      border-radius: 6px;
-    }
+  h1 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #222;
+  }
 
-    .logout-btn {
-      float: right;
-      background: red;
-      color: white;
-      padding: 5px 10px;
-      border: none;
-      cursor: pointer;
-    }
+  p {
+    margin: 0 0 1.5rem;
+    color: #666;
+  }
 
-    h1 {
-      margin-bottom: 1rem;
-    }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .stat-box {
+    background: #f9fafc;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: inset 0 0 0 3px #f0f0f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .stat-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  }
+
+  .stat-box h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #444;
+  }
+
+  .stat-box p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: #007bff;
+  }
+
+  /* Color accents for quick scanning */
+  .stat-box:nth-child(1) { border-left: 6px solid #007bff; }
+  .stat-box:nth-child(2) { border-left: 6px solid #28a745; }
+  .stat-box:nth-child(3) { border-left: 6px solid #ffc107; }
+  .stat-box:nth-child(4) { border-left: 6px solid #dc3545; }
+
+  .logout-btn {
+    float: right;
+    background: #dc3545;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .logout-btn:hover {
+    background: #b52a37;
+  }
+
   </style>
 </head>
 <body>

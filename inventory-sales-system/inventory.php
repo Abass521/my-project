@@ -30,53 +30,97 @@ while ($row = $result->fetch_assoc()) {
   <title>Manage Inventory</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .inventory-box {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #ccc;
-    }
+      body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
+  .inventory-box {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
 
-    th, td {
-      padding: 10px;
-      border: 1px solid #ccc;
-      text-align: left;
-    }
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-    .low-stock {
-      background: #fff2f2;
-      color: red;
-    }
+  .header-bar h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+  }
 
-    a.button {
-      background: #007bff;
-      color: white;
-      padding: 6px 12px;
-      text-decoration: none;
-      border-radius: 4px;
-    }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+  }
 
-    a.button.danger {
-      background: crimson;
-    }
+  th, td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
 
-    .header-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  th {
+    background: #f8f9fc;
+    font-weight: 600;
+    color: #444;
+  }
 
-    .header-bar h2 {
-      margin: 0;
-    }
+  tr:hover {
+    background: #f9fbff;
+  }
+
+  .low-stock {
+    background: #fff5f5;
+    color: #d93025;
+  }
+
+  a.button {
+    background: #007bff;
+    color: white;
+    padding: 6px 12px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+  }
+
+  a.button:hover {
+    background: #0056b3;
+  }
+
+  a.button.danger {
+    background: #dc3545;
+  }
+
+  a.button.danger:hover {
+    background: #b52a37;
+  }
+
+  a.back-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  a.back-link:hover {
+    text-decoration: underline;
+  }
+
   </style>
 </head>
 <?php include 'partials/header.php'; ?>

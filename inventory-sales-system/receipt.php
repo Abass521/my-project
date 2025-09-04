@@ -60,41 +60,111 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cartData'])) {
   <title>Receipt</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
+      body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+
+  .receipt {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  }
+
+  .receipt h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #222;
+  }
+
+  .receipt p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+  }
+
+  .receipt strong {
+    color: #111;
+  }
+
+  .receipt-items {
+    margin-top: 1.5rem;
+    border-top: 2px dashed #ccc;
+    padding-top: 1rem;
+  }
+
+  .receipt-items div {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 0.95rem;
+  }
+
+  .receipt-items div:nth-child(even) {
+    background: #f9fbfd;
+    border-radius: 6px;
+    padding: 6px 8px;
+  }
+
+  .total-line {
+    margin-top: 1.5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  .print-btn {
+    margin-top: 2rem;
+    display: block;
+    background: #007bff;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background 0.2s;
+  }
+
+  .print-btn:hover {
+    background: #0056b3;
+  }
+
+  a.back-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a.back-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
+  /* Print-friendly */
+  @media print {
+    body {
+      background: #fff;
+    }
     .receipt {
-      max-width: 600px;
-      margin: 40px auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-      font-family: monospace;
+      box-shadow: none;
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
     }
+    .print-btn, .back-link, header {
+      display: none;
+    }
+  }
 
-    .receipt h2 {
-      text-align: center;
-    }
-
-    .receipt-items {
-      margin-top: 1rem;
-      border-top: 1px dashed #ccc;
-      padding-top: 1rem;
-    }
-
-    .receipt-items div {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .print-btn {
-      margin-top: 2rem;
-      display: block;
-      background: black;
-      color: white;
-      padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 6px;
-    }
   </style>
 </head>
 <body>

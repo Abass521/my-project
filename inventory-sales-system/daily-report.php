@@ -43,46 +43,102 @@ while ($row = $res3->fetch_assoc()) {
 <head>
   <meta charset="UTF-8">
   <title>Daily Report</title>
-  <link rel="stylesheet" href="css/style.css">
   <script defer src="js/sidebar.js"></script>
   <style>
-    .report-box {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #ccc;
-    }
+      body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
 
-    .summary {
-      margin-bottom: 2rem;
-    }
+  .report-box {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  }
 
-    .summary div {
-      margin: 8px 0;
-    }
+  h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #222;
+  }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
+  .summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 2rem 0;
+  }
 
-    th, td {
-      padding: 10px;
-      border: 1px solid #ddd;
-    }
+  .summary div {
+    flex: 1;
+    min-width: 200px;
+    background: #f9fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 5px solid #007bff;
+    box-shadow: inset 0 0 0 2px #eee;
+    font-weight: 500;
+  }
 
-    .print-btn {
-      margin-top: 2rem;
-      background: black;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 6px;
-      display: inline-block;
-    }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background: #fefefe;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  th {
+    background: #007bff;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+  }
+
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  tr:hover td {
+    background: #f8faff;
+  }
+
+  .print-btn {
+    margin-top: 2rem;
+    background: #007bff;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .print-btn:hover {
+    background: #0056b3;
+  }
+
+  a.back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #555;
+    text-decoration: none;
+  }
+
+  a.back-link:hover {
+    text-decoration: underline;
+  }
+
   </style>
 </head>
 <body>
@@ -123,5 +179,33 @@ while ($row = $res3->fetch_assoc()) {
     <br><br>
     <a href="dashboard.php">⬅ Back to Dashboard</a>
   </div>
+
+  <canvas id="topChart" height="150"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('topChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: <?php echo json_encode(array_column($topSelling, 'name')); ?>,
+      datasets: [{
+        label: 'Units Sold',
+        data: <?php echo json_encode(array_column($topSelling, 'qty')); ?>,
+        backgroundColor: '#007bff'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+</script>
+
 </body>
 </html>

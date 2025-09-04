@@ -63,28 +63,87 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title><?php echo $isEdit ? 'Edit' : 'Add'; ?> Product</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .form-box {
-      max-width: 600px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 2rem;
-      box-shadow: 0 0 10px #ccc;
-      border-radius: 8px;
-    }
+      body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
 
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-    }
+  .form-box {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 2rem 2.5rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    border-radius: 12px;
+  }
 
-    label {
-      font-weight: bold;
-    }
+  h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #222;
+  }
 
-    button {
-      padding: 10px 20px;
-    }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  label {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: #444;
+    display: block;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: border 0.2s, box-shadow 0.2s;
+  }
+
+  input:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+    outline: none;
+  }
+
+  button {
+    padding: 12px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  button:hover {
+    background: #0056b3;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+
   </style>
 </head>
 <body>
