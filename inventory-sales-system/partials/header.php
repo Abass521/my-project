@@ -43,7 +43,7 @@ function active($file, $current) { return $file === $current ? 'active' : ''; }
 
 .userbox .logout {
   display: block;
-  margin-top: 6px;
+  margin-top: 20px;
   font-size: 0.85rem;
   color: #f87171;
   text-decoration: none;

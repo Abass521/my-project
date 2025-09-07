@@ -50,8 +50,8 @@ while ($row = $result->fetch_assoc()) {
   }
 
   .history-box {
-    max-width: 1000px;
-    margin: 40px auto;
+    max-width: 100%;
+    margin-left: 14.9rem;
     background: #ffffff;
     padding: 2rem 2.5rem;
     border-radius: 12px;

@@ -39,8 +39,8 @@ while ($row = $result->fetch_assoc()) {
   }
 
   .inventory-box {
-    max-width: 1100px;
-    margin: 40px auto;
+    max-width: 100%;
+    margin-left: 14.9rem;
     background: #fff;
     padding: 2rem;
     border-radius: 12px;

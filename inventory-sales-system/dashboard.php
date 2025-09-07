@@ -2,25 +2,25 @@
 session_start();
 require_once "php/db.php";
 
-if (!isset($_SESSION['user'])) {
-  header("Location: index.php");
-  exit();
-}
+ if (!isset($_SESSION['user'])) {
+   header("Location: index.php");
+   exit();
+ }
 
-$user = $_SESSION['user'];
+ $user = $_SESSION['user'];
 
-// Fetch data (simulated — we’ll connect real counts later)
-$totalProducts = 0;
-$totalSalesToday = 0;
-$itemsSoldToday = 0;
-$lowStock = 0;
+ // Fetch data (simulated — we’ll connect real counts later)
+ $totalProducts = 0;
+ $totalSalesToday = 0;
+ $itemsSoldToday = 0;
+ $lowStock = 0;
 
-// Get today's date
-$today = date("Y-m-d");
+// // Get today's date
+ $today = date("Y-m-d");
 
-// Total Products
-$res = $conn->query("SELECT COUNT(*) AS total FROM products");
-if ($res) $totalProducts = $res->fetch_assoc()['total'];
+ // Total Products
+ $res = $conn->query("SELECT COUNT(*) AS total FROM products");
+ if ($res) $totalProducts = $res->fetch_assoc()['total'];
 
 // Total Sales & Items Sold (for Admin)
 if ($user['role'] === 'Admin') {
@@ -47,7 +47,6 @@ if ($user['role'] === 'Admin') {
 <head>
   <meta charset="UTF-8">
   <title>Dashboard - Inventory System</title>
-  <link rel="stylesheet" href="css/style.css">
   <script defer src="js/nav.js"></script>
   <script defer src="js/sidebar.js"></script>
   <style>
@@ -60,8 +59,8 @@ if ($user['role'] === 'Admin') {
   }
 
   .dashboard {
-    max-width: 1000px;
-    margin: 40px auto;
+    max-width: 100%;
+    margin-left: 14.9rem;
     padding: 2.5rem;
     background: #fff;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);

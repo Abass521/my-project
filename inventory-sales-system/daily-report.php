@@ -54,8 +54,9 @@ while ($row = $res3->fetch_assoc()) {
   }
 
   .report-box {
-    max-width: 900px;
-    margin: 40px auto;
+    max-width: 100%;
+    max-height: 100vh;
+    margin-left: 14.9rem;
     background: #fff;
     padding: 2.5rem;
     border-radius: 12px;

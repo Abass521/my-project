@@ -48,7 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <style>
       body {
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    background: linear-gradient(135deg, #007bff, #6610f2);
+    background:url(sppp.webp) no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(3px);
     height: 100vh;
     margin: 0;
     display: flex;
@@ -130,8 +133,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <?php endif; ?>
 
     <form method="POST" action="">
-      <input type="text" name="username" placeholder="Username" required><br><br>
-      <input type="password" name="password" placeholder="Password" required><br><br>
+      <input type="text" name="username" placeholder="Username" required>
+      <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Login</button>
     </form>
   </div>

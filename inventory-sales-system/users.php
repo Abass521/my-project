@@ -40,8 +40,8 @@ while ($row = $res->fetch_assoc()) {
   }
 
   .user-box {
-    max-width: 900px;
-    margin: 40px auto;
+    max-width: 100%;
+    margin-left: 14.9rem;
     background: #ffffff;
     padding: 2rem 2.5rem;
     border-radius: 12px;

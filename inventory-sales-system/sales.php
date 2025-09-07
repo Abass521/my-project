@@ -34,9 +34,9 @@ while ($row = $res->fetch_assoc()) {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 0 15px;
+    max-width: 100%;
+    margin-left: 14.9rem;
+    padding: 20px 15px;
   }
 
   .products, .cart {

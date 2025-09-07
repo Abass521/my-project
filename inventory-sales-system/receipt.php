@@ -69,8 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cartData'])) {
   }
 
   .receipt {
-    max-width: 600px;
-    margin: 40px auto;
+    max-width: 100%;
+    margin-left: 14.9rem;
     background: #ffffff;
     padding: 2rem 2.5rem;
     border-radius: 12px;

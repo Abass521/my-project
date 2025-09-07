@@ -72,8 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 
   .form-box {
-    max-width: 600px;
-    margin: 40px auto;
+    max-width: 100%;
+    margin-left: 14.9rem;
     background: #fff;
     padding: 2rem 2.5rem;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
